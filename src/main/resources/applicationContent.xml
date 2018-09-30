@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="com.hanyh.code" />
+
+
+    <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="prefix" value="/WEB-INF/view/" />
+        <property name="suffix" value=".jsp" />
+        <property name="viewClass" value="org.springframework.web.servlet.view.InternalResourceView"/>
+    </bean>
+
+
+    <!--jndi配置 start-->
+    <!--<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">-->
+        <!--<property name="jndiName" value="java:comp/env/jndi/mysql/hanyh_test"/>-->
+        <!--<property name="resourceRef" value="true"/>-->
+    <!--</bean>-->
+    <!--tomcat server.xml配置 start-->
+    <!--  <Resource name="jndi/mysql/hanyh_test" auth="Container"
+                driverClassName="com.mysql.jdbc.Driver"
+                username="root"
+                url="jdbc:mysql://localhost:3306/hanyh_test?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true"
+                password="123456"
+                maxActive="10"
+                initialSize="1"
+                maxWait="5000"
+                maxIdle="5"
+                removeAbandoned="true"
+                removeAbandonedTimeout="180"
+                logAbandoned="true"
+                timeBetweenEvictionRunsMillis="6000000"
+                minEvictableIdleTimeMillis="1800000"
+                type="javax.sql.DataSource"
+      />-->
+    <!--tomcat content.xml 配置-->
+    <!--<ResourceLink global="jndi/mysql/hanyh_test" name="jndi/mysql/hanyh_test" type="javax.sql.DataSource"/>-->
+    <!--jndi配置 end-->
+
+
+
+</beans>
