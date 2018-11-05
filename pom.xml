@@ -5,7 +5,7 @@
   <artifactId>growup</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>growup Maven Webapp</name>
+  <name>growup</name>
   <url>http://maven.apache.org</url>
 
   <properties>
